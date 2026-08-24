@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 
 import userService from '../api/services/userService';
 import SharedAgentCard from '../agents/SharedAgentCard';
@@ -44,6 +44,7 @@ export default function Conversation() {
   const { isMobile } = useMediaQuery();
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
+  const location = useLocation();
   const params = useParams<{
     conversationId?: string;
     agentId?: string;
@@ -64,6 +65,14 @@ export default function Conversation() {
   // A direct send (hero card) that must wait for pending attachments is
   // parked here; MessageInput consumes it into an armed composer send.
   const [queuedQuestion, setQueuedQuestion] = useState<string | null>(null);
+
+  useEffect(() => {
+    const state = location.state as { healthcarePrompt?: string } | null;
+    if (!isNewChatRoute || !state?.healthcarePrompt) return;
+
+    setQueuedQuestion(state.healthcarePrompt);
+    navigate(location.pathname, { replace: true, state: null });
+  }, [isNewChatRoute, location.pathname, location.state, navigate]);
 
   const [lastQueryReturnedErr, setLastQueryReturnedErr] =
     useState<boolean>(false);

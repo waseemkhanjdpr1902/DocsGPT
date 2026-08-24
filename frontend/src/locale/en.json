@@ -3,8 +3,8 @@
   "chat": "Chat",
   "chats": "Chats",
   "newChat": "New Chat",
-  "inputPlaceholder": "How can DocsGPT help you?",
-  "tagline": "DocsGPT uses GenAI, please review critical information using sources.",
+  "inputPlaceholder": "Ask about your healthcare licensing documents...",
+  "tagline": "Prometric Edge AI uses GenAI. Verify licensing decisions with official authorities and cited sources.",
   "sourceDocs": "Source",
   "none": "None",
   "cancel": "Cancel",
@@ -30,20 +30,20 @@
   },
   "demo": [
     {
-      "header": "Learn about DocsGPT",
-      "query": "What is DocsGPT?"
+      "header": "Check document gaps",
+      "query": "Review my uploaded documents and list missing evidence for my healthcare licensing application."
     },
     {
-      "header": "Summarize documentation",
-      "query": "Summarize current context"
+      "header": "Find inconsistencies",
+      "query": "Compare names, dates, qualifications and experience periods across my uploaded documents. Cite every finding."
     },
     {
-      "header": "Write Code",
-      "query": "Write code for api request to /api/answer"
+      "header": "Prepare employer questions",
+      "query": "Based on my documents, draft questions to ask the employer about eligibility, licence activation and start date."
     },
     {
-      "header": "Learning Assistance",
-      "query": "Write potential questions for context"
+      "header": "Explain my licensing stage",
+      "query": "Explain whether my documents indicate self-assessment, verification, evaluation, registration or active-licence stage. Do not make an official eligibility decision."
     }
   ],
   "auth": {
