@@ -25,6 +25,7 @@ import PageNotFound from './PageNotFound';
 import Setting from './settings';
 import Teams from './settings/Teams';
 import Notification from './components/Notification';
+import HealthcareReadiness from './healthcare/HealthcareReadiness';
 import ToolApprovalToast from './notifications/ToolApprovalToast';
 import TeamNotificationToast from './notifications/TeamNotificationToast';
 
@@ -152,6 +153,10 @@ export default function App() {
           <Route path="/settings/*" element={<Setting />} />
           <Route path="/teams" element={<Teams />} />
           <Route path="/agents/*" element={<Agents />} />
+          <Route
+            path="/healthcare-readiness"
+            element={<HealthcareReadiness />}
+          />
           <Route
             path="/admin/*"
             element={
